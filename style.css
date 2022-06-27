@@ -1,19 +1,16 @@
-/* -------  General Styles ------- */
-
 body {
   font-family: "Lato", sans-serif;
 }
 
 h2 {
-  font-size: 40px;
+  font-size: 26px;
   font-weight: 400;
   margin: 0 10px 10px 10px;
   text-align: center;
-  text-emphasis-color: red;
 }
 
 h3 {
-  font-size: 22px;
+  font-size: 18px;
   font-weight: 500;
 }
 
@@ -27,37 +24,12 @@ section {
 }
 
 section.alternate-background {
-  background-color: #a66c00;
+  background-color: #00a699;
   color: #fff;
 }
 
 main img {
-  width: 100px;
-}
-
-.group img {
   width: 100%;
-  padding: 10px;
-}
-
-.group-ideas {
-  width: 100%;
-  padding: 10px;
-}
-
-.group-ideas img {
-  width: 100%;
-  padding: 10px;
-}
-
-.group-host {
-  width: 100%;
-  padding: 10px;
-}
-
-.group-host img {
-  width: 100%;
-  padding: 10px;
 }
 
 /* ---  Groups & Items --- */
@@ -65,28 +37,6 @@ main img {
 .group {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-content: center;
-  align-items: center;
-  flex-wrap: nowrap;
-}
-
-.group-ideas {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-content: flex-start;
-  align-items: flex-start;
-}
-
-.group-host {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-content: flex-start;
-  align-items: flex-start;
 }
 
 .item {
@@ -101,26 +51,19 @@ main img {
 /* -------  Navigation ------- */
 
 header {
-  background-color: #387eff;
-  padding: 10px 10px 0 10px;
+  background-color: #ff385c;
+  padding: 20px 20px 5px 20px;
   text-align: center;
 }
 
 .logo {
   font-family: "Pangolin", cursive;
-  font-size: 72px;
+  font-size: 45px;
   color: #fff;
 }
 
-header nav {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
-
-header nav ul {
-  display: flex;
-  flex-direction: row;
+ul{
+  padding-inline-start: 0;
 }
 
 header nav ul li {
@@ -130,7 +73,7 @@ header nav ul li {
 header nav ul li a {
   color: #fff;
   text-decoration: none;
-  padding: 0 20px 0 0;
+  padding: 0 10px 0 10px;
 }
 
 header nav ul li a:hover {
@@ -138,16 +81,25 @@ header nav ul li a:hover {
   text-decoration: none;
 }
 
-/* -------  Search Form ------- */
-form {
-  border: 2px solid #ff7738;
-  padding: 10px;
+header div{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-.form-items {
-  flex-direction: row;
-  height: auto;
-  align-self: auto;
+/* -------  Search Form ------- */
+form {
+  font-size: 20px;
+  border: 2px solid #ff385c;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+form div{
+  display: flex;
+  justify-content: space-between;
+  margin: 11px;
 }
 
 form label {
@@ -157,97 +109,102 @@ form label {
 form select,
 form input {
   margin-bottom: 20px;
-  width: 180px;
+  width: 160px;
 }
 
 form button {
-  background-color: #3877ff;
+  background-color: #ff385c;
   border: none;
   color: #fff;
-  font-size: 30px;
+  font-size: 24px;
   padding: 15px;
   width: 100%;
+}
+
+/* -------  Host ------- */
+
+section ul{
+  padding-left: 40px;
 }
 
 /* -------  Footer ------- */
 
 footer {
-  background-color: #3877ff;
+  background-color: #ff385c;
 }
 
 footer p {
   color: #fff;
   text-align: center;
-  padding: 10px;
+  padding: 20px;
 }
 
 /* -------  Media Query ------- */
 
-@media all and (min-width: 800px){
-
+@media all and (min-width: 480px) {
   header {
     display: flex;
     justify-content: space-between;
+    padding: 10px 30px 0;
   }
 
-  header h1 {
-    margin: 14px;
-    padding-top: 6px;
-    font-size: 36px;
-    text-align: left;
+  ul{
+    padding-top: 8px;
   }
 
-  header nav {
-    margin-top: 14px;
+  form{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 5px;
   }
 
-  p {
-    font-size: 12px;
-    width: 50%;
-    height: 200px;
+  form input, form select{
+    margin-bottom: 0;
   }
 
-  .p-about {
-    font-size: 12px;
+  form label{
+    padding-right: 5px;
+  }
+
+  form div{
+    flex: 1;
+    margin: 10px;
     width: 100%;
-    height: 100px;
-    padding: 10px;
+    justify-content: none;
   }
   
-  .form-items {
+  .about{
     display: flex;
+    flex-direction: row;
   }
 
-  .form-item {
+  .about-split{
+    flex-direction: row;
+    flex: 1;
     padding: 10px;
   }
 
-  .group {
-    display: grid;
-    grid-template-columns: 30% 30% 40%;
-    grid-gap: 10px;
+  .about-split-p{
+    flex: 2;
+    align-self: center;
+    font-weight: normal;
+  }
+  
+  .about-p{
+    font-size: 15px;
   }
 
-  .group-ideas {
-    display: grid;
-    width: 100%;
-    grid-template-columns: 50% 50%;
-    grid-gap: 10px;
+  .ideas-img{
+    flex: 1;
+    flex-direction: column;
+    padding: 5px;
+    font-size: 15px;
   }
 
-  .group-ideas img {
-    width: 100%;
+  .host-text{
+    padding-top: 50px;
   }
-
-  .group-host {
-    display: grid;
-    width: 100%;
-    grid-template-columns: 50% 50%;
-    grid-gap: 10px;
-  }
-
-  .group-host img {
-    width: 100%;
-  }
-
+  
 }
